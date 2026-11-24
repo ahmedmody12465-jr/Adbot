@@ -1,0 +1,20 @@
+# Dependencies & Virtual Environments
+node_modules/
+venv/
+.venv/
+
+# Environment Variables (keep secrets private)
+.env
+backend/.env
+
+# Python Cache
+**/__pycache__/
+*.py[cod]
+
+# Local Analytics Runtime Data
+data/analytics.json
+
+# OS & Shortcut Files
+*.lnk
+.DS_Store
+Thumbs.db

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdBot - Analytics Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+
+    <header class="dash-header">
+        <div class="dash-brand">
+            <div class="dash-logo">📊</div>
+            <div>
+                <h1>Ad<span>Bot</span> Analytics Dashboard</h1>
+                <p>Standalone Visitor, Category, Interest &amp; Video Insights</p>
+            </div>
+        </div>
+
+        <div class="dash-controls">
+            <label class="auto-refresh-toggle">
+                <input type="checkbox" id="auto-refresh-checkbox" checked>
+                <span>Live (5s)</span>
+            </label>
+            <button id="refresh-btn" class="dash-btn dash-btn-secondary">↻ Refresh</button>
+            <button id="export-btn" class="dash-btn dash-btn-secondary">⬇ Export JSON</button>
+            <button id="reset-btn" class="dash-btn dash-btn-danger">🗑 Reset</button>
+            <a href="index.html" target="_blank" class="dash-btn dash-btn-primary">Open Site ↗</a>
+        </div>
+    </header>
+
+    <main class="dash-main">
+        <div class="dash-status-bar">
+            <span id="last-updated">Loading analytics...</span>
+            <span id="total-page-views-pill" class="pill">Page Views: 0</span>
+        </div>
+
+        <!-- KPI Summary Cards -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-icon blue">👥</div>
+                <div class="kpi-body">
+                    <span class="kpi-label">Site Visits (Sessions)</span>
+                    <h2 id="kpi-visits">0</h2>
+                    <span class="kpi-sub" id="kpi-unique">0 unique visitors</span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-icon indigo">🏷️</div>
+                <div class="kpi-body">
+                    <span class="kpi-label">Top Category</span>
+                    <h2 id="kpi-top-category">—</h2>
+                    <span class="kpi-sub" id="kpi-top-category-sub">0 selections</span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-icon purple">🎯</div>
+                <div class="kpi-body">
+                    <span class="kpi-label">Top Interest</span>
+                    <h2 id="kpi-top-interest">—</h2>
+                    <span class="kpi-sub" id="kpi-top-interest-sub">0 selections</span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-icon green">🎬</div>
+                <div class="kpi-body">
+                    <span class="kpi-label">Most Watched Video</span>
+                    <h2 id="kpi-top-video" class="kpi-title-sm">—</h2>
+                    <span class="kpi-sub" id="kpi-top-video-sub">0 total video views</span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-icon amber">🎟️</div>
+                <div class="kpi-body">
+                    <span class="kpi-label">Coupons Claimed</span>
+                    <h2 id="kpi-offers">0</h2>
+                    <span class="kpi-sub" id="kpi-top-offer-sub">No offers claimed yet</span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-icon cyan">🤖</div>
+                <div class="kpi-body">
+                    <span class="kpi-label">Chatbot Interactions</span>
+                    <h2 id="kpi-chat">0</h2>
+                    <span class="kpi-sub" id="kpi-chat-lang">EN: 0 • AR: 0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Row -->
+        <section class="charts-grid">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>📂 Category Selections</h3>
+                    <span class="panel-badge" id="cat-total-badge">0 total</span>
+                </div>
+                <div id="categories-chart" class="bars-list">
+                    <p class="empty-msg">No category selections recorded yet.</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>✨ Popular Interests</h3>
+                    <span class="panel-badge" id="int-total-badge">0 total</span>
+                </div>
+                <div id="interests-chart" class="bars-list">
+                    <p class="empty-msg">No interest selections recorded yet.</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>📅 Daily Activity (Visits &amp; Video Views)</h3>
+                    <span class="panel-badge">By Date</span>
+                </div>
+                <div id="daily-chart" class="daily-chart">
+                    <p class="empty-msg">No daily activity yet.</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>🤖 Chatbot Insights</h3>
+                    <span class="panel-badge" id="chat-total-badge">0 messages</span>
+                </div>
+                <div id="chat-insights" class="chat-insights">
+                    <p class="empty-msg">No chatbot conversations recorded yet.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tables Row -->
+        <section class="tables-grid">
+            <div class="panel panel-wide">
+                <div class="panel-header">
+                    <h3>🎬 Video Views &amp; Performance Leaderboard</h3>
+                    <span class="panel-badge" id="videos-total-badge">0 views</span>
+                </div>
+                <div class="table-wrap">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Video Title</th>
+                                <th>Category</th>
+                                <th>Interests</th>
+                                <th>Views</th>
+                                <th>Completions</th>
+                                <th>Completion Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="videos-table-body">
+                            <tr><td colspan="7" class="empty-msg">No video data available.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>🎟️ Top Claimed Offers</h3>
+                    <span class="panel-badge" id="offers-total-badge">0 claims</span>
+                </div>
+                <div class="table-wrap">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Offer Title</th>
+                                <th>Category</th>
+                                <th>Claims</th>
+                            </tr>
+                        </thead>
+                        <tbody id="offers-table-body">
+                            <tr><td colspan="3" class="empty-msg">No offers claimed yet.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>🕒 Recent Visitor Activity</h3>
+                    <span class="panel-badge">Latest Events</span>
+                </div>
+                <div id="activity-feed" class="activity-feed">
+                    <p class="empty-msg">No visitor activity yet.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

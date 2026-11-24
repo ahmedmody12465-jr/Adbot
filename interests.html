@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdBot - Choose Your Interests</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/chatbot.js" defer></script>
+</head>
+<body>
+
+    <main class="category-container">
+
+        <header class="category-header">
+            <h1>Ad<span>Bot</span></h1>
+            <a href="categories.html">Change Category</a>
+        </header>
+
+        <section class="category-content">
+
+            <span class="tagline" id="selected-category-badge">STEP 2: PERSONALIZE YOUR OFFERS</span>
+
+            <h2>What Are Your Interests?</h2>
+
+            <p>Select one or more interests to watch videos tailored to your category and taste.</p>
+
+            <div class="category-cards interest-cards" id="interest-cards">
+                <p>Loading interests...</p>
+            </div>
+
+            <div class="interests-actions">
+                <button id="continue-to-ads-btn" class="primary-action-btn">
+                    Show Matching Videos →
+                </button>
+                <button id="skip-interests-btn" class="secondary-action-btn">
+                    Show All Category Videos
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

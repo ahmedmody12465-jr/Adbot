@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdBot - Coupon</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <main class="coupon-container">
+
+        <header class="coupon-header">
+            <h1>Ad<span>Bot</span></h1>
+            <a href="ads.html">Back to Ads</a>
+        </header>
+
+        <section class="coupon-content">
+
+            <h2>Congratulations!</h2>
+            <p>Your special offer is ready.</p>
+
+            <div class="coupon-card">
+
+                <h3 id="coupon-title">Special Offer</h3>
+
+                <p id="coupon-description">
+                    Enjoy your exclusive offer.
+                </p>
+
+                <div class="discount-code">
+
+                    <span>Discount Code</span>
+
+                    <h2 id="discount-code">ADBOT2026</h2>
+
+                    <button id="copy-code-btn" class="copy-code-btn">
+                        Copy Discount Code
+                    </button>
+
+                    <p id="copy-message"></p>
+
+                </div>
+
+                <div class="qr-section">
+
+                    <h3>Scan Your QR Code</h3>
+
+                    <div id="qr-code"></div>
+
+                    <p>Scan to view your offer details.</p>
+
+                </div>
+
+            </div>
+
+            <a href="categories.html" class="home-button">
+                Back to Categories
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

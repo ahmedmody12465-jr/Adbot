@@ -1,0 +1,99 @@
+{
+  "interests": [
+    {
+      "id": "Gaming",
+      "label": "Gaming & Tech",
+      "icon": "🎮",
+      "description": "Video games, VR arenas, consoles, and smart gadgets.",
+      "keywords": [
+        "game", "games", "gaming", "arcade", "vr", "console", "playstation", "xbox",
+        "tech", "gadget", "gadgets", "electronics", "esports",
+        "العاب", "ألعاب", "جيمز", "بلايستيشن", "تكنولوجيا", "اجهزة", "أجهزة", "جيمنج"
+      ]
+    },
+    {
+      "id": "Food",
+      "label": "Food & Dining",
+      "icon": "🍔",
+      "description": "Restaurants, cafes, snacks, desserts, and meal combos.",
+      "keywords": [
+        "food", "eat", "dining", "restaurant", "restaurants", "cafe", "coffee", "boba",
+        "burger", "pizza", "meal", "snack", "sweet", "dessert", "ice cream", "lunch", "dinner",
+        "اكل", "أكل", "طعام", "مطعم", "مطاعم", "كافيه", "قهوة", "حلويات", "برجر", "بيتزا", "وجبة"
+      ]
+    },
+    {
+      "id": "Entertainment",
+      "label": "Entertainment & Shows",
+      "icon": "🎬",
+      "description": "Movies, cartoons, live shows, music, and fun experiences.",
+      "keywords": [
+        "entertainment", "movie", "movies", "cinema", "film", "cartoon", "animation",
+        "story", "show", "shows", "music", "concert", "fun",
+        "ترفيه", "سينما", "فيلم", "افلام", "أفلام", "كرتون", "موسيقى", "حفلة", "مسرح", "مسرحية"
+      ]
+    },
+    {
+      "id": "Shopping",
+      "label": "Shopping & Gifts",
+      "icon": "🛍️",
+      "description": "Fashion, toys, gifts, souvenirs, and mall discounts.",
+      "keywords": [
+        "shop", "shopping", "buy", "store", "mall", "fashion", "clothes", "streetwear",
+        "toy", "toys", "gift", "gifts", "souvenir", "accessories",
+        "تسوق", "شراء", "محل", "مول", "ملابس", "لبس", "موضة", "هدايا", "هدية", "لعب"
+      ]
+    },
+    {
+      "id": "Travel",
+      "label": "Travel & Adventure",
+      "icon": "🎡",
+      "description": "Theme parks, city tours, outdoor parks, and weekend trips.",
+      "keywords": [
+        "travel", "trip", "trips", "tour", "tours", "park", "parks", "theme park",
+        "adventure", "vacation", "city", "sightseeing", "escape", "outdoor",
+        "سفر", "رحلة", "رحلات", "سياحة", "ملاهي", "مغامرة", "خروجة", "حديقة", "جولة"
+      ]
+    }
+  ],
+  "categories": {
+    "Children": ["child", "children", "kid", "kids", "boy", "girl", "son", "daughter", "طفل", "اطفال", "أطفال", "ابني", "بنتي", "صغير"],
+    "Teenagers": ["teen", "teens", "teenager", "teenagers", "youth", "high school", "مراهق", "مراهقين", "شاب", "شباب", "ثانوي"],
+    "Adults": ["adult", "adults", "grown", "man", "woman", "كبار", "بالغ", "بالغين", "كبير"],
+    "Family": ["family", "families", "parents", "everyone", "عائلة", "عائلي", "اسرة", "أسرة", "الاهل", "البيت"],
+    "Friends": ["friend", "friends", "group", "hangout", "squad", "اصدقاء", "أصدقاء", "اصحاب", "أصحاب", "صحابي", "شلة"],
+    "Visitors": ["visitor", "visitors", "tourist", "tourists", "guest", "زائر", "زوار", "سياح", "سائح", "ضيف"]
+  },
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good morning", "good evening", "start", "اهلا", "أهلا", "مرحبا", "السلام عليكم", "ازيك", "عامل ايه", "هاي", "صباح الخير", "مساء الخير"],
+      "reply_en": "Hello! 👋 Welcome to AdBot! Tell me your category (like Children, Teenagers, Adults, Family, Friends, Visitors) or what you're interested in (Gaming, Food, Entertainment, Shopping, Travel) and I'll find the best video offers for you!",
+      "reply_ar": "أهلاً بك في AdBot! 👋 قولي الفئة المناسبة ليك (زي أطفال، شباب، كبار، عائلة، أصدقاء، زوار) وإيه اهتماماتك (ألعاب، أكل ومطاعم، ترفيه وسينما، تسوق، رحلات) وهطلعلك أنسب الفيديوهات والعروض!"
+    },
+    {
+      "tag": "coupon_help",
+      "patterns": ["coupon", "discount", "code", "qr", "redeem", "how to get", "how does it work", "كوبون", "خصم", "كود", "ازاي اخد", "ازاي احصل", "كيف", "استخدم"],
+      "reply_en": "Getting your discount is easy! 🎟️ Pick your category and interests, watch the matching offer video, then click 'Get Offer' (or 'View Offer' right here) to generate your unique discount code and QR code!",
+      "reply_ar": "الحصول على الخصم سهل جداً! 🎟️ اختار الفئة واهتماماتك، شوف الفيديو المناسب ليك، وبعدين اضغط على 'Get Offer' (أو 'View Offer' هنا) عشان يطلعلك كود الخصم والـ QR Code الخاص بيك فوراً!"
+    },
+    {
+      "tag": "help_options",
+      "patterns": ["help", "what can you do", "options", "categories", "interests", "مساعدة", "بتعمل ايه", "ايه المتاح", "الفئات", "الاهتمامات"],
+      "reply_en": "I can help you discover personalized video ads and coupons! 🎯 Our categories are Children, Teenagers, Adults, Family, Friends, and Visitors, and you can filter by Gaming, Food, Entertainment, Shopping, or Travel. Just tell me your age or what you like!",
+      "reply_ar": "أنا هنا عشان أساعدك تلاقي أفضل عروض الفيديو والكوبونات المناسبة ليك! 🎯 الفئات المتاحة: أطفال، شباب، كبار، عائلة، أصدقاء، وزوار — والاهتمامات: ألعاب، أكل، ترفيه، تسوق، ورحلات. قولي سنك أو اهتماماتك وهجيبلك العروض فوراً!"
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thanks", "thank you", "thx", "appreciate", "awesome", "great", "شكرا", "شكراً", "تسلم", "ممتاز", "حلو", "تمام", "يعطيك العافية"],
+      "reply_en": "You're very welcome! 😊 Let me know anytime if you want offers for another category or interest.",
+      "reply_ar": "العفو! 😊 تحت أمرك في أي وقت لو حبيت تدور على عروض لفئة أو اهتمامات تانية."
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you", "later", "باي", "مع السلامة", "سلام"],
+      "reply_en": "Goodbye! 👋 Enjoy your AdBot deals and come back anytime!",
+      "reply_ar": "مع السلامة! 👋 استمتع بعروض AdBot ونورنا في أي وقت!"
+    }
+  ]
+}
